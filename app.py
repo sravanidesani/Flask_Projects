@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
 app = Flask(__name__)
-
+#basic routes added
 @app.route("/")
 def home():
     return "Home"
