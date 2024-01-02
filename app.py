@@ -2,21 +2,21 @@ from flask import Flask, request, jsonify
 import requests
 app = Flask(__name__)
 
-# @app.route("/")
-# def home():
-#     return "Home"
+@app.route("/")
+def home():
+    return "Home"
 
-# @app.route("/get-user/<user_id>")
-# def get_user(user_id):
-#     user_data = {
-#         "user_id" : user_id,
-#         "name" : "sravani",
-#         "age" : 25
-#     }
-#     country = request.args.get("country")
-#     if country:
-#         user_data["country"] = country
-#     return jsonify(user_data), 200
+@app.route("/get-user/<user_id>")
+def get_user(user_id):
+    user_data = {
+        "user_id" : user_id,
+        "name" : "sravani",
+        "age" : 25
+    }
+    country = request.args.get("country")
+    if country:
+        user_data["country"] = country
+    return jsonify(user_data), 200
 
 @app.route("/create-user", methods = ["POST"])
 def create_user():
